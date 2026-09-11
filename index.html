@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant MacDo Mami — Version 2 | Kinshasa</title>
+  <meta name="description" content="MacDo Mami, restaurant à Kinshasa (Gombe) : burgers congolais, poulet braisé, chikwangue, pizzas, grillades et jus naturels. Livraison dans les communes de Kinshasa, paiement Mobile Money, commande sur WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%23b23a24'/%3E%3Ctext%20x='50'%20y='72'%20font-size='60'%20font-family='Georgia,serif'%20font-weight='bold'%20fill='%23ffffff'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">M</span>
+        <span class="logo__text">MacDo <em>Mami</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav__link is-active">Accueil</a>
+        <a href="menu.html" class="nav__link">Menu</a>
+        <a href="reservation.html" class="nav__link">Réservation</a>
+        <a href="evenements.html" class="nav__link">Événements</a>
+        <a href="traiteur.html" class="nav__link">Traiteur</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="panier.html" class="cart-btn" aria-label="Voir le panier">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="cart-btn__badge" id="cartCount">0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Restaurant MacDo Mami · Version 2 — Kinshasa</p>
+      <h1 class="hero__title">Le goût de chez nous,<br /><em>livré chez vous.</em></h1>
+      <p class="hero__text">
+        Burgers, grillades, pizzas et saveurs de chez nous : poulet braisé, chikwangue,
+        banane plantain et jus pressés. Préparés par Mami, livrés chauds dans Kinshasa.
+      </p>
+      <div class="hero__cta">
+        <a href="menu.html" class="btn btn--braise">Voir le menu</a>
+        <a data-wa="Bonjour MacDo Mami ! Je souhaite passer une commande." class="btn btn--outline">Commander sur WhatsApp</a>
+      </div>
+      <div class="hero__badges">
+        <div class="badge"><strong>Burgers · Grillades · Pizzas</strong><span>carte congolaise moderne</span></div>
+        <div class="badge"><strong>Livraison</strong><span>dans les communes de Kinshasa</span></div>
+        <div class="badge"><strong>Mobile Money</strong><span>M-Pesa · Orange · Airtel</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container features__grid">
+      <article class="feature">
+        <h3>Commande en 2 minutes</h3>
+        <p>Ajoutez vos plats, choisissez votre commune, la commande part sur WhatsApp.</p>
+      </article>
+      <article class="feature">
+        <h3>Fait maison chaque jour</h3>
+        <p>Produits frais, marinades maison, braise au feu de bois. Le goût de Mami.</p>
+      </article>
+      <article class="feature">
+        <h3>Payez facilement</h3>
+        <p>Cash à la livraison ou Mobile Money. Aucun paiement en ligne.</p>
+      </article>
+      <article class="feature">
+        <h3>Événements &amp; traiteur</h3>
+        <p>Anniversaires, mariages, bureaux : grandes commandes et devis sur mesure.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="phares">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Nos plats phares</p>
+        <h2 class="section__title">Le meilleur de <em>Mami</em></h2>
+        <p class="section__text">Une carte complète : burgers congolais, poulet braisé, pizzas, chikwangue, desserts et jus naturels.</p>
+      </div>
+      <div class="featured__grid">
+        <article class="dish">
+          <div class="dish__media"><img src="images/burger.webp" alt="Burger Mami, burger congolais" loading="lazy" width="900" height="506" /><span class="dish__tag">Signature</span></div>
+          <div class="dish__body">
+            <h3 class="dish__name">Burger Mami</h3>
+            <p class="dish__desc">Pain moelleux, steak haché, fromage, salade, tomate, oignon et sauce maison.</p>
+            <div class="dish__footer">
+              <span class="dish__price"><span class="dish__price--main dish__price--tbd">[PRIX À RENSEIGNER]</span></span>
+              <a href="menu.html" class="btn btn--dark btn--sm">Voir le menu</a>
+            </div>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish__media"><img src="images/poulet-braise.webp" alt="Poulet braisé entier" loading="lazy" width="900" height="506" /></div>
+          <div class="dish__body">
+            <h3 class="dish__name">Poulet braisé entier</h3>
+            <p class="dish__desc">Mariné 12 h puis braisé lentement à la braise, servi avec oignons caramélisés.</p>
+            <div class="dish__footer">
+              <span class="dish__price"><span class="dish__price--main dish__price--tbd">[PRIX À RENSEIGNER]</span></span>
+              <a href="menu.html" class="btn btn--dark btn--sm">Voir le menu</a>
+            </div>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish__media"><img src="images/pizza.webp" alt="Pizza Mami, pizza congolaise" loading="lazy" width="900" height="506" /><span class="dish__tag">Signature</span></div>
+          <div class="dish__body">
+            <h3 class="dish__name">Pizza Mami</h3>
+            <p class="dish__desc">Poulet braisé, oignons, poivrons, fromage et sauce maison.</p>
+            <div class="dish__footer">
+              <span class="dish__price"><span class="dish__price--main dish__price--tbd">[PRIX À RENSEIGNER]</span></span>
+              <a href="menu.html" class="btn btn--dark btn--sm">Voir le menu</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream" id="zones">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Livraison</p>
+        <h2 class="section__title">On livre dans <em>Kinshasa</em></h2>
+        <p class="section__text">Quatre zones, frais calculés automatiquement au moment de la commande.</p>
+      </div>
+      <div class="zones-map">
+        <div class="zone-card">
+          <div class="zone-card__head"><span class="zone-card__name">Zone 1 — Centre</span><span class="zone-card__fee">3 $</span></div>
+          <div class="zone-card__eta">⏱ 20–35 min</div>
+          <div class="zone-card__chips"><span class="zone-chip">Gombe</span><span class="zone-chip">Lingwala</span><span class="zone-chip">Kinshasa</span></div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-card__head"><span class="zone-card__name">Zone 2 — Proche centre</span><span class="zone-card__fee">5 $</span></div>
+          <div class="zone-card__eta">⏱ 30–45 min</div>
+          <div class="zone-card__chips"><span class="zone-chip">Bandalungwa</span><span class="zone-chip">Kalamu</span><span class="zone-chip">Limete</span><span class="zone-chip">Ngaliema</span></div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-card__head"><span class="zone-card__name">Zone 3 — Est</span><span class="zone-card__fee">7 $</span></div>
+          <div class="zone-card__eta">⏱ 40–60 min</div>
+          <div class="zone-card__chips"><span class="zone-chip">Matete</span><span class="zone-chip">Lemba</span><span class="zone-chip">Kisenso</span></div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-card__head"><span class="zone-card__name">Zone 4 — Grande périphérie</span><span class="zone-card__fee">10 $</span></div>
+          <div class="zone-card__eta">⏱ 60–90 min</div>
+          <div class="zone-card__chips"><span class="zone-chip">Masina</span><span class="zone-chip">Ndjili</span><span class="zone-chip">Selembao</span><span class="zone-chip">Nsele</span></div>
+        </div>
+      </div>
+      <p class="zones-note">À emporter et sur place : sans frais. <a href="contact.html" style="color:var(--braise);font-weight:700;">Voir toutes les communes →</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="apropos">
+    <div class="container about__grid">
+      <div class="about__media">
+        <img src="images/mami-chef.webp" alt="Mami, la cheffe de MacDo Mami" loading="lazy" width="800" height="1000" />
+        <div class="about__frame" aria-hidden="true"></div>
+      </div>
+      <div class="about__content">
+        <p class="section__eyebrow">Notre histoire</p>
+        <h2 class="section__title">La cuisine de <em>Mami</em>, celle qui rassemble</h2>
+        <p>
+          Tout a commencé autour d'une braise, à Matonge, où Mami régalait le quartier avec son poulet mariné
+          et son pili-pili légendaire. Aujourd'hui, <strong>MacDo Mami</strong> régale Kinshasa entière :
+          mêmes recettes, mêmes produits frais du marché, même générosité dans l'assiette.
+        </p>
+        <p>
+          Ici, pas de cuisine industrielle. Chaque poulet est braisé à la commande, chaque jus est pressé
+          le matin même, chaque burger est monté minute. Que ce soit pour un déjeuner rapide au bureau
+          ou un grand repas de famille, Mami cuisine comme pour les siens.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <h2>Une table chez Mami ? <em>Un événement à préparer ?</em></h2>
+        <p>Réservez votre table ou demandez un devis traiteur : Mami vous confirme la disponibilité sur WhatsApp.</p>
+        <a href="reservation.html" class="btn btn--braise">Réserver une table</a>
+        <a href="traiteur.html" class="btn btn--light" style="margin-left:10px;">Demander un devis traiteur</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark">M</span>
+          <span class="logo__text">MacDo <em>Mami</em></span>
+        </a>
+        <p>Le fast-food congolais moderne : burgers, grillades, pizzas et saveurs de chez nous, cuisinés avec cœur à Kinshasa.</p>
+        <div class="footer__hours">
+          <strong>Horaires</strong>
+          <span>Lundi – Dimanche : 10h00 – 21h00</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+243999907678" style="color:inherit;">+243 999 907 678</a></li>
+          <li><a data-wa="Bonjour MacDo Mami !">WhatsApp commandes</a></li>
+          <li>Avenue du Commerce, Gombe — Kinshasa <em style="color:var(--or)">(n° à confirmer)</em></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Avenue+du+Commerce+Gombe+Kinshasa" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></li>
+          <li>[EMAIL À RENSEIGNER]</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Notre restaurant</h4>
+        <ul>
+          <li><a href="menu.html">Notre menu</a></li>
+          <li><a href="reservation.html">Réserver une table</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="traiteur.html">Traiteur &amp; devis</a></li>
+          <li><a href="contact.html">Zones de livraison</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__cta">
+        <h4>Faim maintenant ?</h4>
+        <p>Commandez en 2 minutes, on s'occupe du reste.</p>
+        <a href="menu.html" class="btn btn--braise">Commander</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Restaurant MacDo Mami — Kinshasa, RDC · Version 2</span>
+      <span><a href="confidentialite.html">Politique de confidentialité</a></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/commun.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — MacDo Mami | Burgers, poulet braisé, pizzas à Kinshasa</title>
+  <meta name="description" content="Le menu complet de MacDo Mami à Kinshasa : burgers congolais, poulet braisé, spécialités congolaises, pizzas, accompagnements, boissons, desserts et formules." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%23b23a24'/%3E%3Ctext%20x='50'%20y='72'%20font-size='60'%20font-family='Georgia,serif'%20font-weight='bold'%20fill='%23ffffff'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <header class="header header--solid" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">M</span>
+        <span class="logo__text">MacDo <em>Mami</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav__link">Accueil</a>
+        <a href="menu.html" class="nav__link is-active">Menu</a>
+        <a href="reservation.html" class="nav__link">Réservation</a>
+        <a href="evenements.html" class="nav__link">Événements</a>
+        <a href="traiteur.html" class="nav__link">Traiteur</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="panier.html" class="cart-btn" aria-label="Voir le panier">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="cart-btn__badge" id="cartCount">0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-head__title">Le menu de <em>Mami</em></h1>
+      <p class="page-head__text">Burgers congolais, poulet braisé, spécialités, pizzas, desserts et jus pressés. Cliquez sur « Ajouter » pour remplir votre panier.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; margin-top:20px;">
+        <span class="chip" style="background:#e9edda;color:#4c5b3c;padding:8px 14px;">1 $ ≈ 2 800 FC</span>
+        <div class="cur-toggle" role="group" aria-label="Choisir la devise principale">
+          <button type="button" class="cur-btn" data-cur="USD">$ USD</button>
+          <button type="button" class="cur-btn" data-cur="FC">FC</button>
+        </div>
+        <a data-wa="Bonjour ! Découvre le menu de MacDo Mami à Kinshasa" class="btn btn--light btn--sm">Partager le menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="menu__tabs" id="menuTabs"></div>
+      <div class="menu__grid" id="menuGrid"></div>
+      <p class="zones-note" style="margin-top:36px;">
+        Les plats sans prix affichent « [PRIX À RENSEIGNER] » — le prix sera ajouté par le restaurant.
+        Vous pouvez demander le prix directement sur WhatsApp.
+      </p>
+    </div>
+  </section>
+
+  <div class="sticky-cart is-hidden" id="stickyCart" role="button" tabindex="0" aria-label="Voir le panier" onclick="location.href='panier.html'" onkeydown="if(event.key==='Enter')location.href='panier.html'">
+    <span class="sticky-cart__count">Panier · <b id="stickyCount">0</b> article(s)</span>
+    <span class="sticky-cart__total" id="stickyTotal">0,00 $</span>
+    <span class="sticky-cart__cta">Voir le panier →</span>
+  </div>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark">M</span>
+          <span class="logo__text">MacDo <em>Mami</em></span>
+        </a>
+        <p>Le fast-food congolais moderne : burgers, grillades, pizzas et saveurs de chez nous, cuisinés avec cœur à Kinshasa.</p>
+        <div class="footer__hours">
+          <strong>Horaires</strong>
+          <span>Lundi – Dimanche : 10h00 – 21h00</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+243999907678" style="color:inherit;">+243 999 907 678</a></li>
+          <li><a data-wa="Bonjour MacDo Mami !">WhatsApp commandes</a></li>
+          <li>Avenue du Commerce, Gombe — Kinshasa</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Avenue+du+Commerce+Gombe+Kinshasa" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></li>
+          <li>[EMAIL À RENSEIGNER]</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Notre restaurant</h4>
+        <ul>
+          <li><a href="menu.html">Notre menu</a></li>
+          <li><a href="reservation.html">Réserver une table</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="traiteur.html">Traiteur &amp; devis</a></li>
+          <li><a href="contact.html">Zones de livraison</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__cta">
+        <h4>Faim maintenant ?</h4>
+        <p>Commandez en 2 minutes, on s'occupe du reste.</p>
+        <a href="menu.html" class="btn btn--braise">Commander</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Restaurant MacDo Mami — Kinshasa, RDC · Version 2</span>
+      <span><a href="confidentialite.html">Politique de confidentialité</a></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/commun.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
