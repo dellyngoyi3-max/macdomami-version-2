@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panier & commande — MacDo Mami</title>
+  <meta name="description" content="Votre panier MacDo Mami : vérifiez vos plats, choisissez la livraison ou l'emporté, et envoyez votre commande sur WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%23b23a24'/%3E%3Ctext%20x='50'%20y='72'%20font-size='60'%20font-family='Georgia,serif'%20font-weight='bold'%20fill='%23ffffff'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <header class="header header--solid" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">M</span>
+        <span class="logo__text">MacDo <em>Mami</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav__link">Accueil</a>
+        <a href="menu.html" class="nav__link">Menu</a>
+        <a href="reservation.html" class="nav__link">Réservation</a>
+        <a href="evenements.html" class="nav__link">Événements</a>
+        <a href="traiteur.html" class="nav__link">Traiteur</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="panier.html" class="cart-btn" aria-label="Voir le panier">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="cart-btn__badge" id="cartCount">0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-head__title">Votre <em>panier</em></h1>
+      <p class="page-head__text">Vérifiez vos plats, choisissez la livraison ou l'emporté, puis envoyez la commande sur WhatsApp.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cart-layout">
+      <div class="cart-main">
+        <div id="cartItems"></div>
+
+        <div class="cart__empty" id="cartEmpty">
+          
+          <p>Votre panier est vide</p>
+          <span>Ajoutez vos plats préférés de Mami !</span>
+          <a href="menu.html" class="btn btn--braise">Voir le menu</a>
+        </div>
+
+        <div id="cartFooter" hidden>
+          <label class="cart__mode">
+            <span>Type de commande</span>
+            <select id="orderMode">
+              <option value="delivery">Livraison à domicile</option>
+              <option value="dinein">Sur place</option>
+              <option value="pickup">À emporter (retrait)</option>
+            </select>
+          </label>
+          <label class="cart__zone" id="zoneField">
+            <span>Votre zone</span>
+            <select id="zoneSelect"></select>
+          </label>
+          <div class="cart__totals">
+            <div class="total-row"><span>Sous-total</span><span id="subtotal">0,00 $</span></div>
+            <div class="total-row" id="deliveryRow"><span>Livraison</span><span id="deliveryFee">3,00 $</span></div>
+            <div class="total-row" id="discountRow" hidden><span id="discountLabel">Code promo</span><span id="discount">-0,00 $</span></div>
+            <div class="total-row total-row--big"><span>Total</span><span id="total">0,00 $</span></div>
+          </div>
+          <p class="cart__eta" id="cartEta" hidden>⏱ Délai estimé : <strong id="etaText">20–35 min</strong></p>
+          <button class="btn btn--braise btn--block" id="checkoutBtn">Passer la commande →</button>
+          <p class="cart__storage-note">ℹ️ Votre panier est sauvegardé sur cet appareil pour faciliter votre commande.</p>
+        </div>
+      </div>
+
+      <aside class="cart-side">
+        <h3>Bon à savoir</h3>
+        <ul>
+          <li>Livraison dans les communes de Kinshasa, frais calculés par zone.</li>
+          <li>À emporter et sur place : sans frais.</li>
+          <li>Paiement cash à la livraison ou Mobile Money.</li>
+          <li>Aucun paiement en ligne : Mami vous confirme chaque commande sur WhatsApp.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Fenêtre de commande : formulaire + récapitulatif -->
+  <div class="modal" id="checkoutModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal__box">
+      <button class="modal__close" id="modalClose" aria-label="Fermer">✕</button>
+
+      <div id="formView">
+        <div class="modal__head">
+          <h3 id="checkoutTitle">Finaliser la commande</h3>
+          <p>Remplissez vos informations. Vous pourrez tout vérifier avant l'envoi sur WhatsApp.</p>
+        </div>
+        <p class="privacy-note">Ces informations servent uniquement à préparer et livrer votre commande. <a href="confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a></p>
+        <form id="checkoutForm" class="form" novalidate>
+          <div class="form__row">
+            <label>Nom complet *
+              <input type="text" name="name" placeholder="Ex : Grâce Mbuyi" required autocomplete="name" />
+            </label>
+            <label>Téléphone *
+              <input type="tel" name="phone" placeholder="Ex : 0812 345 678" required autocomplete="tel" />
+            </label>
+          </div>
+          <label id="tableLabel" style="display:none;">Numéro de table *
+            <input type="text" name="table" id="tableInput" placeholder="Ex : 4" maxlength="10" />
+            <small style="color:var(--muted);display:block;margin-top:4px;">Indiqué sur le chevalet de votre table.</small>
+          </label>
+          <label id="communeLabel">Commune *
+            <select name="commune" id="commune" required></select>
+          </label>
+          <label id="addressLabel">Adresse (partielle)
+            <input type="text" name="address" placeholder="Av., n°, quartier… (une indication suffit)" />
+          </label>
+          <label id="landmarkLabel">Point de repère <span class="opt">(recommandé)</span>
+            <input type="text" name="landmark" placeholder="École, église, marché, station-service, avenue…" />
+          </label>
+          <label id="precisionLabel">Précision (optionnel)
+            <input type="text" name="precision" placeholder="Portail bleu, 2ᵉ entrée à droite…" />
+          </label>
+          <div class="geo" id="geoBox">
+            <button type="button" class="btn btn--dark btn--sm" id="geoBtn">Utiliser ma position actuelle</button>
+            <p class="geo__hint">Votre position sert uniquement à faciliter la livraison et reste facultative. Vous pouvez aussi saisir votre adresse ou un point de repère manuellement.</p>
+            <span class="geo__status" id="geoStatus"></span>
+          </div>
+          <label id="contact2Label">Autre personne à contacter (optionnel)
+            <input type="text" name="contact2" placeholder="Nom + téléphone" />
+          </label>
+          <label id="timeLabel">Heure de livraison souhaitée (optionnel)
+            <input type="time" name="time" />
+          </label>
+          <label>Mode de paiement
+            <select name="payment" id="payment"></select>
+          </label>
+          <label>Code promo (optionnel)
+            <input type="text" name="promo" id="promoInput" placeholder="Ex : BIENVENUE10" />
+            <small class="promo-msg" id="promoMsg"></small>
+          </label>
+          <label>Note pour Mami (optionnel)
+            <textarea name="note" rows="2" placeholder="Ex : peu de piment, couverts en plus…"></textarea>
+          </label>
+
+          <div class="form__summary" id="formSummary"></div>
+
+          <button type="submit" class="btn btn--braise btn--block">Vérifier ma commande →</button>
+          <p class="form__hint">Étape suivante : récapitulatif complet avant l'envoi sur WhatsApp. Aucun paiement en ligne requis.</p>
+        </form>
+      </div>
+
+      <div id="confirmView" hidden>
+        <div class="modal__head">
+          <h3>Vérifiez votre commande</h3>
+          <p>Relisez tout avant de l'envoyer à Mami sur WhatsApp.</p>
+        </div>
+        <div class="confirm" id="confirmBody"></div>
+        <div class="confirm__actions">
+          <button type="button" class="btn btn--dark" id="backToForm">← Modifier</button>
+          <button type="button" class="btn btn--braise" id="sendWhatsApp">Confirmer et envoyer sur WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark">M</span>
+          <span class="logo__text">MacDo <em>Mami</em></span>
+        </a>
+        <p>Le fast-food congolais moderne : burgers, grillades, pizzas et saveurs de chez nous, cuisinés avec cœur à Kinshasa.</p>
+        <div class="footer__hours">
+          <strong>Horaires</strong>
+          <span>Lundi – Dimanche : 10h00 – 21h00</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+243999076878" style="color:inherit;">+243 999 076 878</a></li>
+          <li><a data-wa="Bonjour MacDo Mami !">WhatsApp commandes</a></li>
+          <li>Avenue du Commerce, Gombe — Kinshasa</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Avenue+du+Commerce+Gombe+Kinshasa" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></li>
+          <li>[EMAIL À RENSEIGNER]</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Notre restaurant</h4>
+        <ul>
+          <li><a href="menu.html">Notre menu</a></li>
+          <li><a href="reservation.html">Réserver une table</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="traiteur.html">Traiteur &amp; devis</a></li>
+          <li><a href="contact.html">Zones de livraison</a></li>
+          <li><a href="tables.html">QR codes de table</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__cta">
+        <h4>Faim maintenant ?</h4>
+        <p>Commandez en 2 minutes, on s'occupe du reste.</p>
+        <a href="menu.html" class="btn btn--braise">Commander</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> MacDo Mami — Kinshasa, RDC</span>
+      <span><a href="confidentialite.html">Politique de confidentialité</a></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/commun.js"></script>
+  <script src="js/panier.js"></script>
+</body>
+</html>

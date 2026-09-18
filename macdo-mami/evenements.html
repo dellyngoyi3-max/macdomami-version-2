@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Événements — MacDo Mami Kinshasa</title>
+  <meta name="description" content="Anniversaires, mariages, soirées et événements d'entreprise à Kinshasa : MacDo Mami organise votre réception et vous confirme la disponibilité sur WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%23b23a24'/%3E%3Ctext%20x='50'%20y='72'%20font-size='60'%20font-family='Georgia,serif'%20font-weight='bold'%20fill='%23ffffff'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <header class="header header--solid" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">M</span>
+        <span class="logo__text">MacDo <em>Mami</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav__link">Accueil</a>
+        <a href="menu.html" class="nav__link">Menu</a>
+        <a href="reservation.html" class="nav__link">Réservation</a>
+        <a href="evenements.html" class="nav__link is-active">Événements</a>
+        <a href="traiteur.html" class="nav__link">Traiteur</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="panier.html" class="cart-btn" aria-label="Voir le panier">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="cart-btn__badge" id="cartCount">0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-head__title">Vos <em>événements</em></h1>
+      <p class="page-head__text">Anniversaires, mariages, soirées, réunions d'entreprise : Mami s'occupe de la table, vous profitez de vos invités.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about__grid" style="margin-bottom:48px;">
+        <div class="about__media">
+          <img src="images/salle.webp" alt="Salle de restaurant MacDo Mami à Kinshasa" loading="lazy" width="900" height="900" />
+        </div>
+        <div>
+          <p class="section__eyebrow">Célébrations</p>
+          <h2 class="section__title">Une salle chaleureuse, <em>une table de fête</em></h2>
+          <p style="color:var(--muted);margin-top:14px;">
+            Pour un anniversaire, un baptême, un mariage ou une soirée d'entreprise,
+            nous préparons une table dressée, des plats chauds et un service attentionné.
+            Décrivez votre projet : nous revenons vers vous sur WhatsApp avec la disponibilité.
+          </p>
+        </div>
+      </div>
+
+      <div class="features__grid" style="margin-bottom:48px;">
+        <article class="feature"><h3>Anniversaires</h3><p>Menus enfants et adultes, gâteaux et décorations sur demande.</p></article>
+        <article class="feature"><h3>Mariages &amp; baptêmes</h3><p>Grandes tablées, plats traditionnels et buffet traiteur.</p></article>
+        <article class="feature"><h3>Soirées</h3><p>Burgers, grillades et pizzas pour vos soirées entre amis.</p></article>
+        <article class="feature"><h3>Entreprises</h3><p>Déjeuners d'équipe et réceptions livrées au bureau.</p></article>
+      </div>
+
+      <div class="cart-main" style="max-width:680px; margin:0 auto;">
+        <form id="eventForm" class="form" novalidate>
+          <div class="form__row">
+            <label>Type d'événement *
+              <select name="etype" required>
+                <option value="">— Choisir —</option>
+                <option>Anniversaire</option>
+                <option>Mariage</option>
+                <option>Baptême</option>
+                <option>Soirée</option>
+                <option>Événement d'entreprise</option>
+                <option>Autre</option>
+              </select>
+            </label>
+            <label>Date (optionnel)
+              <input type="date" name="edate" />
+            </label>
+          </div>
+          <label>Nombre d'invités (optionnel)
+            <input type="number" name="einvites" min="1" placeholder="Ex : 30" />
+          </label>
+          <div class="form__row">
+            <label>Nom complet *
+              <input type="text" name="enom" placeholder="Ex : Grâce Mbuyi" required autocomplete="name" />
+            </label>
+            <label>Téléphone / WhatsApp *
+              <input type="tel" name="etel" placeholder="Ex : 0812 345 678" required autocomplete="tel" />
+            </label>
+          </div>
+          <label>Votre message (optionnel)
+            <textarea name="enote" rows="3" placeholder="Décrivez votre projet : date, ambiance, plats souhaités…"></textarea>
+          </label>
+          <button type="submit" class="btn btn--braise btn--block">Envoyer ma demande</button>
+          <p class="form__hint">Votre demande part sur WhatsApp. Mami vous confirme la disponibilité.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark">M</span>
+          <span class="logo__text">MacDo <em>Mami</em></span>
+        </a>
+        <p>Le fast-food congolais moderne : burgers, grillades, pizzas et saveurs de chez nous, cuisinés avec cœur à Kinshasa.</p>
+        <div class="footer__hours">
+          <strong>Horaires</strong>
+          <span>Lundi – Dimanche : 10h00 – 21h00</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+243999076878" style="color:inherit;">+243 999 076 878</a></li>
+          <li><a data-wa="Bonjour MacDo Mami !">WhatsApp commandes</a></li>
+          <li>Avenue du Commerce, Gombe — Kinshasa</li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Avenue+du+Commerce+Gombe+Kinshasa" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></li>
+          <li>[EMAIL À RENSEIGNER]</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Notre restaurant</h4>
+        <ul>
+          <li><a href="menu.html">Notre menu</a></li>
+          <li><a href="reservation.html">Réserver une table</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="traiteur.html">Traiteur &amp; devis</a></li>
+          <li><a href="contact.html">Zones de livraison</a></li>
+          <li><a href="tables.html">QR codes de table</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__cta">
+        <h4>Faim maintenant ?</h4>
+        <p>Commandez en 2 minutes, on s'occupe du reste.</p>
+        <a href="menu.html" class="btn btn--braise">Commander</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> MacDo Mami — Kinshasa, RDC</span>
+      <span><a href="confidentialite.html">Politique de confidentialité</a></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/commun.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
